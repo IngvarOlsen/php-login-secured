@@ -17,10 +17,18 @@ if (ini_get("session.use_cookies")) {
     );
 }
 
+// Validate the host name
+$allowed_hosts = ['www.example.com', 'example.com'];
+$host = $_SERVER['HTTP_HOST'];
+if (!in_array($host, $allowed_hosts)) {
+    // Log this attempt or handle as you see fit
+    $host = 'www.example.com';  // Default to a safe option
+}
+
 // Redirect to login page with absolute URL
 $protocol = 'http://';
 if (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') {
     $protocol = 'https://';
 }
-header("Location: " . $protocol . $_SERVER['HTTP_HOST'] . "/php-login");
+header("Location: " . $protocol . $host . "/php-login");
 exit();
