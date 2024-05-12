@@ -1,6 +1,6 @@
 # php-login
 
-This is a fork from a very small application presenting an extremely-simple-and-almost-unrealistic login system written in PHP, which has been deliberately made vulnerable, but now have been updated except for new the docker enviroment. 
+This is a fork from a very small application presenting an extremely-simple-and-almost-unrealistic login system written in PHP, which has been deliberately made vulnerable, but now have been updated except for the docker enviroment. 
 
 Manual code review, and automated tests were done with Snyk, aswell as penetration tests
 
