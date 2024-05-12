@@ -12,7 +12,7 @@ $options = [
 
 try {
     $conn = new PDO("mysql:host=$server;dbname=$database;", $username, $password, $options);
-    // Optionally, enforce SSL connection if your environment supports it
+    // Optionally, enforce SSL connection if possible, but we did not create a self singed cert for this assigment
     // $conn->setAttribute(PDO::MYSQL_ATTR_SSL_CA, '/path/to/server-cert.pem');
 } catch(PDOException $e) {
     error_log($e->getMessage()); // Log error to server's error log
