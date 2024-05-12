@@ -17,12 +17,11 @@ if (ini_get("session.use_cookies")) {
     );
 }
 
-// Validate the host name
-$allowed_hosts = ['www.example.com', 'example.com'];
+// Validate the host name, would need to be defined in a real hosted php app on the web 
+$allowed_hosts = ['www.example.com', 'example.com', 'localhost', '127.0.0.1'];
 $host = $_SERVER['HTTP_HOST'];
 if (!in_array($host, $allowed_hosts)) {
-    // Log this attempt or handle as you see fit
-    $host = 'www.example.com';  // Default to a safe option
+    $host = 'localhost';  // Default to a option while we just got the website locally
 }
 
 // Redirect to login page with absolute URL
